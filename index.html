@@ -7,15 +7,20 @@
     <title>SCCC Генератор</title>
 </head>
 <body>
-    <div class="body-container">
-        <div class="options-container">
-            
+    <div class="wrapper">
+        <h2 class="headliner headliner_font">(минималистичный) Генератор SSCC-18 кодов.</h2>
+        <div class="sscc sscc-border">
+            <h6 class="sscc__organica sscc__organica_font sscc__organica_alignment">ООО Компания "Органика" г. Воронеж</h6>
+            <h4 class="sscc__question-mark sscc__question-mark_size">?</h4>
+            <input class="sscc__digits sscc__digits-border sscc__digits-nofocus sscc__digits-font" placeholder="(00)00000000000000000">
         </div>
-
-        <div class="generated-barcode-container">
-            <svg id="barcode"></svg>
+         <!-- <h5 class="result result-font result-invisible">Создано успешно. Начинаю загрузку.</h5> добавь этот элемент сюда после промиса -->
+        <div class="guide">
+            <img id="guide__arrow guide__arrow-size" src="src/image.png">
+            <h3 class="guide__text">Достаточно просто нажать по макету и ввести цифровое значание.</h3>
         </div>
     </div>
+
 
     <script src="src/html2canvas.min.js"></script>
     <script src="src/barcode.min.js"></script>

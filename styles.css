@@ -1,3 +1,92 @@
-.body-container{
-    
+body{
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headliner_font{
+    font-size: 50px;
+}
+
+
+
+.sscc{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 0px;
+    width: 600px;
+    height: 200px;
+}
+
+.sscc-border{
+    border: solid black 2px;
+}
+
+.sscc__organica{
+    margin-left: 20px;
+}
+
+.sscc__organica_font{
+    font-size: 10px;
+}
+
+.sscc__organica_alignment{
+    align-self: start;
+}
+
+.sscc__question-mark_size{
+    font-size: 30px;
+    line-height:0%;
+}
+
+.sscc__digits{
+    margin-bottom: 20px;
+}
+
+.sscc__digits-border{
+    border: none;
+}
+
+.sscc__digits-nofocus{
+    outline: none;
+}
+
+.sscc__digits-font{
+    font-size: 20px;
+}
+
+.sscc__digits::placeholder{
+    color: black;
+}
+
+
+.result-font{
+    font-size: 20px;
+}
+
+.result-invisible{
+    visibility: hidden;
+}
+
+
+.guide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.guide__arrow-size{
+    max-width: 200px;
+    max-height: 200px;
 }
