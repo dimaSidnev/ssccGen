@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap" rel="stylesheet">
     <title>SCCC Генератор</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper wrapper_alignment">
         <h2 class="headliner headliner_font">(минималистичный) Генератор SSCC-18 кодов.</h2>
-        <div class="sscc sscc-border">
+
+        <div class="sscc sscc_alignment sscc_bg-color sscc_border">
             <h6 class="sscc__organica sscc__organica_font sscc__organica_alignment">ООО Компания "Органика" г. Воронеж</h6>
-            <h4 class="sscc__question-mark sscc__question-mark_size">?</h4>
-            <input class="sscc__digits sscc__digits-border sscc__digits-nofocus sscc__digits-font" placeholder="(00)00000000000000000">
+            <svg id="barcode"></svg>
+            <input placeholder="(00)00000000000000000" id="input" type="text" class="sscc__digits sscc_digits_alignment sscc__digits_border sscc__digits_nofocus sscc__digits_font">
         </div>
-         <!-- <h5 class="result result-font result-invisible">Создано успешно. Начинаю загрузку.</h5> добавь этот элемент сюда после промиса -->
-        <div class="guide">
-            <img id="guide__arrow guide__arrow-size" src="src/image.png">
-            <h3 class="guide__text">Достаточно просто нажать по макету и ввести цифровое значание.</h3>
+        <div class="guide guide_alignment">
+            <img id="guide__arrow guide__arrow_size" src="src/image.png">
+            <h4 class="guide__text">1. Кликни по макету и введи значение<br> 2. <a class="guide__download" id="download">Нажми на меня</a><br> 3. ???<br>4. Готово!</h4>
         </div>
     </div>
 
+    <div class="background background_markup background_unselectable">
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+        <h2 class="background__text background__text_animation background__text_size background__text_colour background__text_wrap">ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА ПРИЁМКА</h2>
+    </div>
 
     <script src="src/html2canvas.min.js"></script>
     <script src="src/barcode.min.js"></script>

@@ -1,23 +1,34 @@
 body{
     overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.wrapper{
+canvas{
+    z-index: 10;
+    visibility: visible;
+}
+
+.wrapper_alignment{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.headliner{
+    z-index: 1;
 }
 
 .headliner_font{
-    font-size: 50px;
+    font-size: 35px;
 }
 
 
 
-.sscc{
+.sscc_alignment{
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -27,16 +38,25 @@ body{
     height: 200px;
 }
 
-.sscc-border{
+.sscc_hidden{
+    visibility: hidden;
+}
+
+.sscc_bg-color{
+    background-color: white;
+}
+
+.sscc_border{
     border: solid black 2px;
 }
 
 .sscc__organica{
     margin-left: 20px;
+    height: 0px;
 }
 
 .sscc__organica_font{
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .sscc__organica_alignment{
@@ -49,44 +69,101 @@ body{
 }
 
 .sscc__digits{
-    margin-bottom: 20px;
+    width: 500px;
+    margin-bottom: 10px;
 }
 
-.sscc__digits-border{
+.sscc_digits_alignment{
+    text-align: center;
+}
+
+.sscc__digits_border{
     border: none;
 }
 
-.sscc__digits-nofocus{
+.sscc__digits_nofocus{
     outline: none;
 }
 
-.sscc__digits-font{
+.sscc__digits_font{
     font-size: 20px;
 }
 
 .sscc__digits::placeholder{
+    font-family: 'Roboto Condensed', sans-serif;
     color: black;
 }
 
 
-.result-font{
+.result{
+    z-index: 4;
+}
+
+.result_font{
     font-size: 20px;
 }
 
-.result-invisible{
+.result_invisible{
     visibility: hidden;
 }
 
 
-.guide{
+.guide_alignment{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     gap: 3em;
+    z-index: 4;
 }
 
-.guide__arrow-size{
+.guide__arrow{
+    z-index: 4;
+}
+
+.guide__arrow_size{
     max-width: 200px;
     max-height: 200px;
+}
+
+.guide__download_red{
+    color: red;
+}
+
+
+
+.background_unselectable{
+    user-select: none;
+}
+
+.background_markup{
+    position: absolute;
+    top: -200px;
+    left: 0;
+}
+
+.background__text_animation{
+    animation: 30s linear infinite running background__text_animation;
+}
+
+.background__text_size{
+    font-size: 70px;
+}
+
+.background__text_colour{
+    color: #ededed;
+}
+
+.background__text_wrap{
+    white-space: nowrap;
+}
+
+@keyframes background__text_animation {
+    0%{
+        transform: rotate(-10deg) translateX(-22vw);
+    }
+
+    100%{
+        transform: rotate(-10deg) translateX(0vw);
+    }
 }
