@@ -8,6 +8,12 @@ canvas{
     visibility: visible;
 }
 
+
+.hidden{
+    display: none;
+}
+
+
 .wrapper_alignment{
     width: 100vw;
     height: 100vh;
@@ -26,7 +32,6 @@ canvas{
 }
 
 
-
 .sscc_alignment{
     z-index: 20;
     display: flex;
@@ -36,10 +41,6 @@ canvas{
     gap: 0px;
     width: 600px;
     height: 200px;
-}
-
-.sscc_hidden{
-    visibility: hidden;
 }
 
 .sscc_bg-color{
@@ -108,28 +109,62 @@ canvas{
 }
 
 
-.guide_alignment{
+.generate_btn{
+    z-index: 10;
+}
+
+
+
+.btn{
+    text-align: center;
+    width: 200px;
+    z-index: 10;
+}
+
+.btn_wrapper{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 3em;
-    z-index: 4;
+    gap: 5em;
 }
 
-.guide__arrow{
-    z-index: 4;
+.btn__bg_green{
+    transition: 0.5s;
+    background-color: #33b249;
+    padding: 10px;
 }
 
-.guide__arrow_size{
-    max-width: 200px;
-    max-height: 200px;
+.btn__bg_green:hover{
+    background-color: #247c33;
 }
 
-.guide__download_red{
-    color: red;
+.btn__bg_red{
+    transition: 0.5s;
+    background-color: #ED0800;
+    padding: 10px;
 }
 
+.btn__bg_red:hover{
+    background-color: #940500;
+}
+
+.btn__text_colour{
+    color: white;
+}
+
+.btn__text_size{
+    font-size: 20px;
+}
+
+.btn__border{
+    border-radius: 2%;
+}
+
+.btn__no_decoration{
+    text-decoration: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
 
 
 .background_unselectable{

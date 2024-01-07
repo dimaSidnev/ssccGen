@@ -7,20 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap" rel="stylesheet">
+    
     <title>SCCC Генератор</title>
 </head>
 <body>
     <div class="wrapper wrapper_alignment">
         <h2 class="headliner headliner_font">(минималистичный) Генератор SSCC-18 кодов.</h2>
-
-        <div class="sscc sscc_alignment sscc_bg-color sscc_border">
-            <h6 class="sscc__organica sscc__organica_font sscc__organica_alignment">ООО Компания "Органика" г. Воронеж</h6>
+        <div id="capture" class="sscc sscc_alignment sscc_bg-color sscc_border">
+            <h6 id="logo" class="sscc__organica sscc__organica_font sscc__organica_alignment">ООО Компания "Органика" г. Воронеж</h6>
             <svg id="barcode"></svg>
             <input placeholder="(00)00000000000000000" id="input" type="text" class="sscc__digits sscc_digits_alignment sscc__digits_border sscc__digits_nofocus sscc__digits_font">
         </div>
-        <div class="guide guide_alignment">
-            <img id="guide__arrow guide__arrow_size" src="src/image.png">
-            <h4 class="guide__text">1. Кликни по макету и введи значение<br> 2. <a class="guide__download" id="download">Нажми на меня</a><br> 3. ???<br>4. Готово!</h4>
+        <btn class="btn btn__bg_green btn__text_colour btn__border btn__text_size btn__no_decoration" id="generate">Создать</btn>
+        <div class="btn_wrapper">
+            <a class="btn btn__bg_green btn__text_colour btn__border btn__text_size btn__no_decoration hidden" download id="download">Скачать</a>
+            <btn class="btn btn__bg_red btn__text_colour btn__border btn__text_size btn__no_decoration hidden" id="reset">Назад</btn>
         </div>
     </div>
 
