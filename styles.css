@@ -4,8 +4,18 @@ body{
 }
 
 canvas{
+    overflow-clip-margin: 0px;
     z-index: 10;
     visibility: visible;
+}
+
+
+.warning{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 20;
 }
 
 
@@ -32,8 +42,12 @@ canvas{
 }
 
 
+.sscc:hover{
+    cursor: text;
+}
+
 .sscc_alignment{
-    z-index: 20;
+    z-index: 19;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -164,6 +178,26 @@ canvas{
 
 .btn:hover{
     cursor: pointer;
+}
+
+
+.info{
+    z-index: 20;
+}
+
+.info:hover{
+    cursor: pointer;
+}
+
+.info__placement{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.info__resolution{
+    width: 80px;
+    height: 80px;
 }
 
 
