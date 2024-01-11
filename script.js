@@ -28,6 +28,8 @@ generateBtn.addEventListener("click", toCanvas); //все ивентлисене
 downloadBtn.addEventListener("click", download); //что бы понять что за фукнции во вторых аргументах - смотри ниже
 resetBtn.addEventListener("click", reset);
 input.addEventListener("input", generateBarcode);
+input.addEventListener("focus", () => {input.placeholder = ""}); //оказывается, не все видят что они сфокусированы на импуте без этого ивента
+input.addEventListener("blur", () => {input.placeholder = "(00)00000000000000000"});
 sscc.addEventListener("click", () => { input.focus() });
 infoBtn.addEventListener("click", showInfo);
 
@@ -40,7 +42,7 @@ function dataToURL(){
 }
 
 function showInfo(){ //куча текста в одной строке, ну и кошмар, да-да
-    alert('Как пользоваться моим генератором для "чайников".\n1. Нажми на большой прямоугольник (штрих-код).\n2. Введи своё значение.\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")')
+    alert('Как пользоваться моим генератором.\n1. Нажми на любую часть прямоугольника со штрих-кодом.\n2. Введи своё значение.\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")');
 }
 
 function hideSSCC(){
@@ -48,6 +50,7 @@ function hideSSCC(){
     barcode.classList.add("hidden");
     input.classList.add("hidden");
     generateBtn.classList.add("hidden");
+    infoBtn.classList.add("hidden");
     downloadBtn.classList.remove("hidden");
     resetBtn.classList.remove("hidden");
 }
@@ -57,6 +60,7 @@ function unHideSSCC(){
     barcode.classList.remove("hidden");
     input.classList.remove("hidden");
     generateBtn.classList.remove("hidden");
+    infoBtn.classList.remove("hidden");
     downloadBtn.classList.add("hidden");
     resetBtn.classList.add("hidden");
 }

@@ -4,6 +4,8 @@ body{
 }
 
 canvas{
+    margin: 0;
+    padding: 0;
     overflow-clip-margin: 0px;
     z-index: 10;
     visibility: visible;
@@ -137,6 +139,7 @@ canvas{
 
 .btn_wrapper{
     display: flex;
+    place-items: center;
     gap: 5em;
 }
 
@@ -189,12 +192,6 @@ canvas{
     cursor: pointer;
 }
 
-.info__placement{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 .info__resolution{
     width: 80px;
     height: 80px;
@@ -227,12 +224,6 @@ canvas{
     white-space: nowrap;
 }
 
-@keyframes background__text_animation {
-    0%{
-        transform: rotate(-10deg) translateX(-22vw);
-    }
-
-    100%{
-        transform: rotate(-10deg) translateX(0vw);
-    }
+.background__text_angle{
+    transform: rotate(-2deg);
 }
