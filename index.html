@@ -14,15 +14,15 @@
     <div class="wrapper wrapper_alignment">
         <h2 class="headliner headliner_font">(минималистичный) Генератор SSCC-18 кодов.</h2>
         <div id="capture" class="sscc sscc_alignment sscc_bg-color sscc_border">
-            <h6 id="logo" class="sscc__organica sscc__organica_font sscc__organica_alignment">ООО "Компания "Органика", склад г. Воронеж</h6>
-            <svg id="barcode"></svg>
+            <input placeholder='ООО "Компания "Органика", склад г. Воронеж' id="logo" type="text" class="sscc__organica sscc__organica_font sscc__organica_border sscc__organica_nofocus sscc__organica_alignment sscc__organica_font-weight">
+            <svg class="sscc__barcode sscc__barcode_width sscc__barcode_height" id="barcode"></svg>
             <input placeholder="(00)00000000000000000" id="input" type="text" class="sscc__digits sscc_digits_alignment sscc__digits_border sscc__digits_nofocus sscc__digits_font">
         </div>
         <div class="btn_wrapper">
-            <img class="info info__placement info__resolution" src="src/info.png">
-            <btn class="btn btn__bg_green btn__text_colour btn__border btn__text_size btn__no_decoration" id="generate">Создать</btn>
-            <a class="btn btn__bg_green btn__text_colour btn__border btn__text_size btn__no_decoration hidden" download="sscc_sid" id="download">Скачать</a>
-            <btn class="btn btn__bg_red btn__text_colour btn__border btn__text_size btn__no_decoration hidden" id="reset">Назад</btn>
+            <button class="info btn btn__bg_blue btn__text_colour btn__border btn__font btn__no_decoration">Инструкция</button>
+            <button class="btn btn__bg_green btn__text_colour btn__border btn__font btn__no_decoration" id="generate">Создать</button>
+            <a class="btn btn__bg_green btn__text_colour btn__border btn__font btn__no_decoration hidden" download="sscc_sid" id="download">Скачать</a>
+            <button class="btn btn__bg_red btn__text_colour btn__border btn__font btn__no_decoration hidden" id="reset">Назад</button>
         </div>
     </div>
 

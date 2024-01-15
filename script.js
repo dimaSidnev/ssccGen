@@ -30,7 +30,8 @@ resetBtn.addEventListener("click", reset);
 input.addEventListener("input", generateBarcode);
 input.addEventListener("focus", () => {input.placeholder = ""}); //оказывается, не все видят что они сфокусированы на импуте без этого ивента
 input.addEventListener("blur", () => {input.placeholder = "(00)00000000000000000"});
-sscc.addEventListener("click", () => { input.focus() });
+logo.addEventListener("focus", () => {logo.placeholder = ""}); //если мне ещё раз приёдтся это писать, лучше сделаю это в отдельную функцию
+logo.addEventListener("blur", () => {logo.placeholder = 'ООО "Компания "Органика", склад г. Воронеж'});
 infoBtn.addEventListener("click", showInfo);
 
 
@@ -42,7 +43,7 @@ function dataToURL(){
 }
 
 function showInfo(){ //куча текста в одной строке, ну и кошмар, да-да
-    alert('Как пользоваться моим генератором.\n1. Нажми на любую часть прямоугольника со штрих-кодом.\n2. Введи своё значение.\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")');
+    alert('Как пользоваться моим генератором.\n1. Нажми на часть прямоугольника со штрих-кодом, которую хочешь изменить (пока что это либо цифры снизу, либо текст сверху).\n2. Введи своё значение.\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")');
 }
 
 function hideSSCC(){

@@ -68,16 +68,40 @@ canvas{
 }
 
 .sscc__organica{
-    margin-left: 20px;
-    height: 0px;
+    padding-bottom: 15px;
+    width: 90%;
+    height: 25px;
+    margin-top: 20px;
+}
+
+.sscc__organica_font-weight{
+    font-weight: 900;
+}
+
+.sscc__organica_border{
+    border: none;
+}
+
+.sscc__organica_nofocus{
+    outline: none;
 }
 
 .sscc__organica_font{
-    font-size: 15px;
+    font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.sscc__organica_alignment{
-    align-self: start;
+.sscc__organica::placeholder{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+}
+
+.sscc__barcode_width{
+    width: 90%;
+}
+
+.sscc__barcode_height{
+    max-height: 50%;
 }
 
 .sscc__question-mark_size{
@@ -103,6 +127,7 @@ canvas{
 }
 
 .sscc__digits_font{
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
 }
 
@@ -117,6 +142,7 @@ canvas{
 }
 
 .result_font{
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
 }
 
@@ -143,6 +169,16 @@ canvas{
     gap: 5em;
 }
 
+.btn__bg_blue{
+    transition: 0.5s;
+    background-color: #0d6efd;
+    padding: 10px;
+}
+
+.btn__bg_blue:hover{
+    background-color: #094fb8;
+}
+
 .btn__bg_green{
     transition: 0.5s;
     background-color: #33b249;
@@ -167,11 +203,13 @@ canvas{
     color: white;
 }
 
-.btn__text_size{
+.btn__font{
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
 }
 
 .btn__border{
+    border: none;
     border-radius: 2%;
 }
 
@@ -187,16 +225,6 @@ canvas{
 .info{
     z-index: 20;
 }
-
-.info:hover{
-    cursor: pointer;
-}
-
-.info__resolution{
-    width: 80px;
-    height: 80px;
-}
-
 
 .background_unselectable{
     user-select: none;
