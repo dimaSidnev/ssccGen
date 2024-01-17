@@ -4,15 +4,7 @@ barcodeOptions = { //настройки генератора штрихкода,
     height: 150,
 }
 
-
-let resolutionCheck = new Promise(function(resolve, reject){ //согласен, странное использование промиса, но в отличие от функции его не нужно
-    const windowHeightResolution = window.screen.availHeight; //лишний раз вызывать
-    const windowWidthResolution = window.screen.availWidth;
-    if(windowHeightResolution < 830 || windowWidthResolution < 1440){
-        alert("Я создавал сайт исключительно под компьютеры. Если что-то не работает или коряво выглядит, то я предупреждал. Чао!");
-        resolve();
-    } else resolve();
-});
+window.addEventListener("load", resolutionCheck); //проверка на мобилки
 
 const input = document.querySelector("#input"); //куча элементов, ничего особенного
 const barcode = document.querySelector("#barcode");
@@ -22,6 +14,8 @@ const downloadBtn = document.querySelector("#download");
 const generateBtn = document.querySelector("#generate");
 const resetBtn = document.querySelector("#reset");
 const infoBtn = document.querySelector(".info");
+const overlay = document.querySelector(".overlay");
+const popupBtn = document.querySelector("#popupBtn");
 
 
 generateBtn.addEventListener("click", toCanvas); //все ивентлисенеры, тоже ничего особенного
@@ -33,17 +27,41 @@ input.addEventListener("blur", () => {input.placeholder = "(00)00000000000000000
 logo.addEventListener("focus", () => {logo.placeholder = ""}); //если мне ещё раз приёдтся это писать, лучше сделаю это в отдельную функцию
 logo.addEventListener("blur", () => {logo.placeholder = 'ООО "Компания "Органика", склад г. Воронеж'});
 infoBtn.addEventListener("click", showInfo);
+popupBtn.addEventListener("click", hideInfo);
 
 
 //дальше идёт куча простых функций с говорящими именами, знаю, я мог и не объявлять их в таком количестве
 //но посчитал что так будет лучше, модульный код йоу
+
+function resolutionCheck(){ //проверка на мобильные устройства (нет, адаптивный дизайн в планы не входил)
+    const windowHeightResolution = window.screen.availHeight;
+    const windowWidthResolution = window.screen.availWidth;
+    if(windowHeightResolution < 830 || windowWidthResolution < 1440){
+        document.querySelector(".popup__header").innerHTML = "Ахтунг!";
+        document.querySelector(".popup__content").innerHTML = "Я создавал сайт исключительно для десктопов. Если есть желание получить рак глаз - кнопка снизу ждёт тебя."
+        document.querySelector("#popupBtn").classList.remove("btn__bg_blue");
+        document.querySelector("#popupBtn").classList.add("btn__bg_red");
+        showInfo();
+        popupBtn.addEventListener("click", resolutionCheckReset, { once: true });
+        return;
+    } else return;
+};
+
+function resolutionCheckReset(){ //колбэк, убирающий инфу с попапа для мобильных устройств
+    document.querySelector(".popup__header").innerHTML = "Инструкция";
+    document.querySelector(".popup__content").innerHTML = 'Нажми на часть прямоугольника со штрих-кодом, которую хочешь изменить (пока что это либо цифры снизу, либо текст сверху).\n2. Введи своё значение (к сожалению, кириллицу машина не понимает).\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")';
+    document.querySelector("#popupBtn").classList.remove("btn__bg_red");
 function dataToURL(){
     let canvas = document.getElementsByTagName("canvas");
     return canvas[0].toDataURL("image/png");
 }
 
 function showInfo(){ //куча текста в одной строке, ну и кошмар, да-да
-    alert('Как пользоваться моим генератором.\n1. Нажми на часть прямоугольника со штрих-кодом, которую хочешь изменить (пока что это либо цифры снизу, либо текст сверху).\n2. Введи своё значение.\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")');
+    overlay.classList.remove("hidden");
+}
+
+function hideInfo(){
+    overlay.classList.add("hidden");
 }
 
 function hideSSCC(){
