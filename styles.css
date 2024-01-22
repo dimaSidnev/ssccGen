@@ -11,7 +11,8 @@ canvas{
     visibility: visible;
 }
 
-.overlay{
+
+.overlay_alignment{
     display: flex;
     justify-content: center;
     place-items: center;
@@ -21,6 +22,9 @@ canvas{
     width: 100vw;
     height: 100vh;
     z-index: 19;
+}
+
+.overlay_bg_colour{
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -29,7 +33,7 @@ canvas{
     height: 30vh;
 }
 
-.popup{
+.popup_alignment{
     display: flex;
     flex-direction: column;
     justify-content: space-around;

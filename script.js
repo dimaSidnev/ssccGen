@@ -51,6 +51,7 @@ function resolutionCheckReset(){ //колбэк, убирающий инфу с 
     document.querySelector(".popup__header").innerHTML = "Инструкция";
     document.querySelector(".popup__content").innerHTML = 'Нажми на часть прямоугольника со штрих-кодом, которую хочешь изменить (пока что это либо цифры снизу, либо текст сверху).\n2. Введи своё значение (к сожалению, кириллицу машина не понимает).\n3. Нажми "Создать".\n4. Теперь нажми "Скачать" и(или) "Назад".\n(эти кнопки появятся после нажатия "Создать")';
     document.querySelector("#popupBtn").classList.remove("btn__bg_red");
+}
 function dataToURL(){
     let canvas = document.getElementsByTagName("canvas");
     return canvas[0].toDataURL("image/png");
@@ -108,4 +109,5 @@ function reset(){
 }
 
 
-JsBarcode("#barcode", "(00)00000000000000000", barcodeOptions); //задаёт изначальное значение штрихкоду
+JsBarcode("#barcode", "(00)00000000000000000", barcodeOptions); //задаёт изначальное значение штрих-коду
+//бтв, если штрихкод изначально не появляется на странице, значит скрипт где-то дохнет и пора его чинить
